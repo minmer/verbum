@@ -118,27 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ErrorBuildServerConnection" xml:space="preserve">
-    <value>Aufbauen einer Verbindung mit dem Server</value>
+    <value>Build server connection</value>
     <comment>Build server connection</comment>
   </data>
   <data name="ErrorCloneServerConnection" xml:space="preserve">
-    <value>Klonen einer Verbindung mit dem Server</value>
+    <value>Clone server connection</value>
     <comment>Clone server connection</comment>
   </data>
   <data name="ErrorInsertContentText" xml:space="preserve">
-    <value>Einsetzen der Textinformation</value>
+    <value>Insert Content Text</value>
     <comment>Insert Content Text</comment>
   </data>
   <data name="ErrorSaveContentTextContent" xml:space="preserve">
-    <value>Speichern der Textinformationsinformation</value>
+    <value>Save content text content</value>
     <comment>Save content text content</comment>
   </data>
   <data name="ErrorSaveContentTextQuestion" xml:space="preserve">
-    <value>Speichern der Textinformationsfrage</value>
+    <value>Save content text question</value>
     <comment>Save content text question</comment>
   </data>
   <data name="ErrorUploadQuery" xml:space="preserve">
-    <value>Hochladen von Anfragen</value>
+    <value>Upload a query</value>
     <comment>Upload a query</comment>
   </data>
 </root>

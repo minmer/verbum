@@ -61,7 +61,7 @@ namespace Verbum.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erstelle ein neue Textinformation.
+        ///   Looks up a localized string similar to Create New Content Text.
         /// </summary>
         public static string CreateNewContentText {
             get {
@@ -70,7 +70,7 @@ namespace Verbum.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bearbeiten.
+        ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string Edit {
             get {
@@ -79,7 +79,7 @@ namespace Verbum.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lade alle Textinformationen.
+        ///   Looks up a localized string similar to Load All Content Text.
         /// </summary>
         public static string LoadAllContentText {
             get {

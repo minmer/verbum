@@ -61,7 +61,7 @@ namespace VerbumEssentials.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aufbauen einer Verbindung mit dem Server.
+        ///   Looks up a localized string similar to Build server connection.
         /// </summary>
         internal static string ErrorBuildServerConnection {
             get {
@@ -70,7 +70,7 @@ namespace VerbumEssentials.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Klonen einer Verbindung mit dem Server.
+        ///   Looks up a localized string similar to Clone server connection.
         /// </summary>
         internal static string ErrorCloneServerConnection {
             get {
@@ -79,7 +79,7 @@ namespace VerbumEssentials.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Einsetzen der Textinformation.
+        ///   Looks up a localized string similar to Insert Content Text.
         /// </summary>
         internal static string ErrorInsertContentText {
             get {
@@ -88,7 +88,7 @@ namespace VerbumEssentials.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speichern der Textinformationsinformation.
+        ///   Looks up a localized string similar to Save content text content.
         /// </summary>
         internal static string ErrorSaveContentTextContent {
             get {
@@ -97,7 +97,7 @@ namespace VerbumEssentials.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speichern der Textinformationsfrage.
+        ///   Looks up a localized string similar to Save content text question.
         /// </summary>
         internal static string ErrorSaveContentTextQuestion {
             get {
@@ -106,7 +106,7 @@ namespace VerbumEssentials.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hochladen von Anfragen.
+        ///   Looks up a localized string similar to Upload a query.
         /// </summary>
         internal static string ErrorUploadQuery {
             get {

@@ -121,4 +121,12 @@
     <value>Erstelle ein neue Textinformation</value>
     <comment>Create New Content Text</comment>
   </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+    <comment>Edit</comment>
+  </data>
+  <data name="LoadAllContentText" xml:space="preserve">
+    <value>Lade alle Textinformationen</value>
+    <comment>Load All Content Text</comment>
+  </data>
 </root>
