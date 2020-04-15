@@ -13,7 +13,7 @@ namespace Verbum
     using System.Windows.Controls;
     using Npgsql;
     using Verbum.Windows;
-    using VerbumEssentials.Basics;
+    using VerbumLibrary.Basics;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml.

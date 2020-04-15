@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:res="clr-namespace:VerbumApp.Resources"
+             mc:Ignorable="d"
+             x:Class="VerbumApp.MainPage" Appearing="OnLoaded">
+    <Grid>
+        <Image Source="logo.png" Margin="6" HorizontalOptions="Center" VerticalOptions="Center" Opacity=".08"/>
+        <ScrollView>
+            <StackLayout>
+                <CollectionView x:Name="CollectionViewContents">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Question}" Margin="6,3"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Button Text="{x:Static res:Resources.LoadAllContentText}" Margin="6,3" Clicked="OnButtonLoadAllContentTextClicked"/>
+            </StackLayout>
+        </ScrollView>
+        <Grid x:Name="GridLoading" BackgroundColor="#3F000000">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="/Images/Logo.png" Margin="6" WidthRequest="300" HeightRequest="100"/>
+                <ActivityIndicator IsRunning="True" Margin="6"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -2,22 +2,27 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace Verbum
+namespace VerbumApp
 {
     using System;
-    using System.Collections.Generic;
-    using System.Configuration;
-    using System.Data;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using System.Windows;
     using VerbumLibrary.Basics;
+    using Xamarin.Forms;
+    using Xamarin.Forms.Xaml;
 
     /// <summary>
     /// Interaction logic for App.xaml.
     /// </summary>
     public partial class App : Application
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="App"/> class.
+        /// </summary>
+        public App()
+        {
+            this.InitializeComponent();
+            this.MainPage = new MainPage();
+        }
+
         /// <summary>
         /// Gets the main <see cref="VServerConnections"/> of the <see cref="App"/>.
         /// </summary>
@@ -33,11 +38,24 @@ namespace Verbum
         /// </summary>
         public static VQuerySchedule QuerySchedule { get; private set; }
 
-        private void OnStartup(object sender, StartupEventArgs eventArgs)
+        /// <inheritdoc/>
+        protected override void OnStart()
         {
             ServerErrors = new VServerErrors();
             ServerConnections = new VServerConnections(new VServerConnectionArguments("sql.minmer.nazwa.pl", 5432, "minmer_mainverbum", "minmer_mainverbum", "VerbumCaroFactumEst0"), ServerErrors);
             QuerySchedule = new VQuerySchedule(ServerConnections, ServerErrors);
+        }
+
+        /// <inheritdoc/>
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
+
+        /// <inheritdoc/>
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
         }
     }
 }

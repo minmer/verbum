@@ -15,7 +15,7 @@ namespace Verbum.Windows
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using System.Windows.Shapes;
-    using VerbumEssentials.Basics;
+    using VerbumLibrary.Basics;
 
     /// <summary>
     /// Interaction logic for ContentTextWindow.xaml.

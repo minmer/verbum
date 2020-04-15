@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace VerbumEssentials.Basics
+namespace VerbumLibrary.Basics
 {
     using System;
     using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace VerbumEssentials.Basics
     using System.Threading.Tasks;
     using Npgsql;
     using NpgsqlTypes;
-    using VerbumEssentials.Resources;
+    using VerbumLibrary.Resources;
 
     /// <summary>
     /// Represents content of type string.
@@ -163,9 +163,11 @@ namespace VerbumEssentials.Basics
 
         private async Task<object> LoadObjectFromDbAsync(string propertyName)
         {
-            using NpgsqlCommand command = new NpgsqlCommand("SELECT " + propertyName + " FROM content_text WHERE id = @id;", await this.serverConnections.GetConnectionAsync().ConfigureAwait(false));
-            command.Parameters.AddWithValue("@id", NpgsqlDbType.Integer, this.ID);
-            return await command.ExecuteScalarAsync().ConfigureAwait(false);
+            using (NpgsqlCommand command = new NpgsqlCommand("SELECT " + propertyName + " FROM content_text WHERE id = @id;", await this.serverConnections.GetConnectionAsync().ConfigureAwait(false)))
+            {
+                command.Parameters.AddWithValue("@id", NpgsqlDbType.Integer, this.ID);
+                return await command.ExecuteScalarAsync().ConfigureAwait(false);
+            }
         }
     }
 }
