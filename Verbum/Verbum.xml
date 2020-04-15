@@ -73,17 +73,17 @@
         </member>
         <member name="P:Verbum.Resources.Resources.CreateNewContentText">
             <summary>
-              Looks up a localized string similar to Erstelle ein neue Textinformation.
+              Looks up a localized string similar to Create New Content Text.
             </summary>
         </member>
         <member name="P:Verbum.Resources.Resources.Edit">
             <summary>
-              Looks up a localized string similar to Bearbeiten.
+              Looks up a localized string similar to Edit.
             </summary>
         </member>
         <member name="P:Verbum.Resources.Resources.LoadAllContentText">
             <summary>
-              Looks up a localized string similar to Lade alle Textinformationen.
+              Looks up a localized string similar to Load All Content Text.
             </summary>
         </member>
         <member name="T:Verbum.Windows.ContentTextWindow">

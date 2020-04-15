@@ -9,10 +9,10 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\AKM\Documents\Visual Studio 2019\Projects\Verbum\Verbum\Verbum.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <NoWarn>NU1701;1702</NoWarn>
+    <NoWarn>1701;1702;SA0001</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
