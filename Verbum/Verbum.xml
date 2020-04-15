@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Verbum</name>
+    </assembly>
+    <members>
+        <member name="T:Verbum.App">
+            <summary>
+            Interaction logic for App.xaml.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="P:Verbum.App.ServerConnections">
+            <summary>
+            Gets the main <see cref="T:VerbumEssentials.Basics.VServerConnections"/> of the <see cref="T:Verbum.App"/>.
+            </summary>
+        </member>
+        <member name="P:Verbum.App.ServerErrors">
+            <summary>
+            Gets the main <see cref="T:VerbumEssentials.Basics.VServerErrors"/> of the <see cref="T:Verbum.App"/>.
+            </summary>
+        </member>
+        <member name="P:Verbum.App.QuerySchedule">
+            <summary>
+            Gets the main <see cref="T:VerbumEssentials.Basics.VQuerySchedule"/> of the <see cref="T:Verbum.App"/>.
+            </summary>
+        </member>
+        <member name="M:Verbum.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Verbum.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:Verbum.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:Verbum.MainWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Verbum.MainWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:Verbum.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Verbum.Resources.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Verbum.Resources.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Verbum.Resources.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Verbum.Resources.Resources.CreateNewContentText">
+            <summary>
+              Looks up a localized string similar to Erstelle ein neue Textinformation.
+            </summary>
+        </member>
+        <member name="P:Verbum.Resources.Resources.Edit">
+            <summary>
+              Looks up a localized string similar to Bearbeiten.
+            </summary>
+        </member>
+        <member name="P:Verbum.Resources.Resources.LoadAllContentText">
+            <summary>
+              Looks up a localized string similar to Lade alle Textinformationen.
+            </summary>
+        </member>
+        <member name="T:Verbum.Windows.ContentTextWindow">
+            <summary>
+            Interaction logic for ContentTextWindow.xaml.
+            </summary>
+            <summary>
+            ContentTextWindow
+            </summary>
+        </member>
+        <member name="M:Verbum.Windows.ContentTextWindow.#ctor(VerbumEssentials.Basics.VContentText)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Verbum.Windows.ContentTextWindow"/> class.
+            </summary>
+            <param name="contentText">The dataContext of the <see cref="T:Verbum.Windows.ContentTextWindow"/>.</param>
+        </member>
+        <member name="M:Verbum.Windows.ContentTextWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

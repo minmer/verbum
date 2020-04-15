@@ -1,0 +1,39 @@
+﻿<Window x:Class="Verbum.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Verbum"
+        xmlns:res="clr-namespace:Verbum.Resources"
+        mc:Ignorable="d"
+        Title="Verbum" Height="450" Width="800" Loaded="OnLoaded">
+    <Grid>
+        <Image Source="/Images/Logo.png" Margin="6" Width="768" Height="256" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity=".08"/>
+        <ScrollViewer>
+            <StackPanel>
+                <ItemsControl x:Name="ItemsControlContents">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="6 3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Question}"/>
+                                <Button Grid.Column="1" Content="{x:Static res:Resources.Edit}" Click="OnButtonEditContentTextClick"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Button Content="{x:Static res:Resources.CreateNewContentText}" Margin="6 3" Click="OnButtonCreateNewContentTextClick"/>
+                <Button Content="{x:Static res:Resources.LoadAllContentText}" Margin="6 3" Click="OnButtonLoadAllContentTextClick"/>
+            </StackPanel>
+        </ScrollViewer>
+        <Border x:Name="BorderLoading" Background="#3F000000">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="/Images/Logo.png" StretchDirection="DownOnly" Margin="6" Width="300" Height="100"/>
+                <ProgressBar IsIndeterminate="True" Height="32" Width="256" Margin="6"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

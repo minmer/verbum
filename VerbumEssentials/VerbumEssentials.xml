@@ -1,0 +1,467 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VerbumEssentials</name>
+    </assembly>
+    <members>
+        <member name="T:VerbumEssentials.Basics.IVContent">
+            <summary>
+            Interface that represents a VerbumContent.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.IVContent.ID">
+            <summary>
+            Gets the identifier of the <see cref="T:VerbumEssentials.Basics.IVContent"/>.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.IVContent.Question">
+            <summary>
+            Gets or sets the question related to the content.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.IVContent.LoadQuestionAsync">
+            <summary>
+            Loads the question from the database.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:VerbumEssentials.Basics.IVContent.SaveQuestion(System.String)">
+            <summary>
+            Assigns the question by a <see cref="T:System.String"/> and saves it in the database.
+            </summary>
+            <param name="value">The <see cref="T:System.String"/> that should be assigned and saved.</param>
+        </member>
+        <member name="T:VerbumEssentials.Basics.VContentText">
+            <summary>
+            Represents content of type string.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VContentText.#ctor(VerbumEssentials.Basics.VQuerySchedule,VerbumEssentials.Basics.VServerConnections,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VerbumEssentials.Basics.VContentText"/> class.
+            </summary>
+            <param name="querySchedule">The <see cref="T:VerbumEssentials.Basics.VQuerySchedule"/> handling the <see cref="T:VerbumEssentials.Basics.VQuery"/> of the <see cref="T:VerbumEssentials.Basics.VContentText"/>.</param>
+            <param name="serverConnections">The <see cref="T:VerbumEssentials.Basics.VServerConnections"/> handling the <see cref="T:Npgsql.NpgsqlConnection"/> of the <see cref="T:VerbumEssentials.Basics.VContentText"/>.</param>
+            <param name="id">The identifier of the <see cref="T:VerbumEssentials.Basics.VContentText"/>.</param>
+        </member>
+        <member name="E:VerbumEssentials.Basics.VContentText.PropertyChanged">
+            <inheritdoc/>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VContentText.Content">
+            <summary>
+            Gets or sets the content related to the question.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VContentText.ID">
+            <inheritdoc/>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VContentText.Question">
+            <inheritdoc/>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VContentText.LoadContentAsync">
+            <summary>
+            Loads the content from the database.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VContentText.LoadQuestionAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VContentText.SaveContent(System.String)">
+            <summary>
+            Assigns the content by a <see cref="T:System.String"/> and saves it in the database.
+            </summary>
+            <param name="value">The <see cref="T:System.String"/> that should be assigned and saved.</param>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VContentText.SaveQuestion(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VContentText.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Invokes the PropertyChanged of the <see cref="T:VerbumEssentials.Basics.VContentText"/>.
+            </summary>
+            <param name="eventArgs">The PropertyChangedEventArgs of the mehtod.</param>
+        </member>
+        <member name="T:VerbumEssentials.Basics.VQuery">
+            <summary>
+            Describes a query for the server.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VQuery.#ctor(System.Func{Npgsql.NpgsqlConnection,Npgsql.NpgsqlCommand},System.Action{System.Data.Common.DbDataReader},System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VerbumEssentials.Basics.VQuery"/> struct.
+            </summary>
+            <param name="command">A function that generates the command of the <see cref="T:VerbumEssentials.Basics.VQuery"/>.</param>
+            <param name="action">The Action of the <see cref="T:VerbumEssentials.Basics.VQuery"/>.</param>
+            <param name="description">The description of the query for exceptions.</param>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VQuery.Action">
+            <summary>
+            Gets the Action of the <see cref="T:VerbumEssentials.Basics.VQuery"/>.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VQuery.Command">
+            <summary>
+            Gets a function that generates the command of the <see cref="T:VerbumEssentials.Basics.VQuery"/>.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VQuery.Description">
+            <summary>
+            Gets a description of the <see cref="T:VerbumEssentials.Basics.VQuery"/>.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VQuery.IsSaved">
+            <summary>
+            Gets or sets a value indicating whether the query was saved.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VQuery.Time">
+            <summary>
+            Gets the time when the error was raised.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VQuery.op_Equality(VerbumEssentials.Basics.VQuery,VerbumEssentials.Basics.VQuery)">
+            <summary>
+            Checks two parameters for equality.
+            </summary>
+            <param name="left">The left parameter.</param>
+            <param name="right">The right parameter.</param>
+            <returns>The result of the equality check.</returns>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VQuery.op_Inequality(VerbumEssentials.Basics.VQuery,VerbumEssentials.Basics.VQuery)">
+            <summary>
+            Checks two parameters for inequality.
+            </summary>
+            <param name="left">The left parameter.</param>
+            <param name="right">The right parameter.</param>
+            <returns>The result of the inequality check.</returns>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VQuery.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VQuery.Equals(VerbumEssentials.Basics.VQuery)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VQuery.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:VerbumEssentials.Basics.VQuerySchedule">
+            <summary>
+            Represents a unit handling and providing <see cref="T:VerbumEssentials.Basics.VQuery"/>.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VQuerySchedule.#ctor(VerbumEssentials.Basics.VServerConnections,VerbumEssentials.Basics.VServerErrors)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VerbumEssentials.Basics.VQuerySchedule"/> class.
+            </summary>
+            <param name="serverConnections">The <see cref="T:VerbumEssentials.Basics.VServerConnections"/> handling the <see cref="T:Npgsql.NpgsqlConnection"/> of the schedule.</param>
+            <param name="serverErrors">The <see cref="T:VerbumEssentials.Basics.VServerErrors"/> handling the <see cref="T:VerbumEssentials.Basics.VServerError"/> of the schedule.</param>
+        </member>
+        <member name="T:VerbumEssentials.Basics.VQuerySchedule.QueryAddedHandler">
+            <summary>
+            Handles the addition of an <see cref="T:VerbumEssentials.Basics.VQuery"/>.
+            </summary>
+            <param name="query">The <see cref="T:VerbumEssentials.Basics.VQuery"/>, that was added.</param>
+        </member>
+        <member name="T:VerbumEssentials.Basics.VQuerySchedule.CompletionHandler">
+            <summary>
+            Handles the completion of all <see cref="T:VerbumEssentials.Basics.VQuery"/>.
+            </summary>
+        </member>
+        <member name="E:VerbumEssentials.Basics.VQuerySchedule.QueryAdded">
+            <summary>
+            An event raised when an <see cref="T:VerbumEssentials.Basics.VQuery"/> was added.
+            </summary>
+        </member>
+        <member name="E:VerbumEssentials.Basics.VQuerySchedule.Completion">
+            <summary>
+            An event raised when all <see cref="T:VerbumEssentials.Basics.VQuery"/> were uploaded.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VQuerySchedule.Queries">
+            <summary>
+            Gets a list of all scheduled <see cref="T:VerbumEssentials.Basics.VQuery"/>.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VQuerySchedule.AddQuery(VerbumEssentials.Basics.VQuery)">
+            <summary>
+            Adds an <see cref="T:VerbumEssentials.Basics.VQuery"/>.
+            </summary>
+            <param name="query">The <see cref="T:VerbumEssentials.Basics.VQuery"/>, that should be added.</param>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VQuerySchedule.OnQueryAdded(VerbumEssentials.Basics.VQuery)">
+            <summary>
+            Invokes the QueryAdded event of the <see cref="T:VerbumEssentials.Basics.VQuerySchedule"/>.
+            </summary>
+            <param name="query">The <see cref="T:VerbumEssentials.Basics.VQuery"/>, that was added.</param>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VQuerySchedule.OnCompletion">
+            <summary>
+            Invokes the Completion event of the <see cref="T:VerbumEssentials.Basics.VQuerySchedule"/>.
+            </summary>
+        </member>
+        <member name="T:VerbumEssentials.Basics.VServerConnectionArguments">
+            <summary>
+            Describes objects necessary for a serverconnection.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerConnectionArguments.#ctor(System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VerbumEssentials.Basics.VServerConnectionArguments"/> struct.
+            </summary>
+            <param name="server">A string representation of the server.</param>
+            <param name="port">The port of the connection.</param>
+            <param name="user">A string representation of the user.</param>
+            <param name="database">A string representation of the database.</param>
+            <param name="password">A string representation of the password.</param>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerConnectionArguments.Database">
+            <summary>
+            Gets a string representation of the database.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerConnectionArguments.Password">
+            <summary>
+            Gets a string representation of the password.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerConnectionArguments.Port">
+            <summary>
+            Gets the port of the connection.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerConnectionArguments.Server">
+            <summary>
+            Gets a string representation of the server.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerConnectionArguments.User">
+            <summary>
+            Gets a string representation of the user.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerConnectionArguments.op_Equality(VerbumEssentials.Basics.VServerConnectionArguments,VerbumEssentials.Basics.VServerConnectionArguments)">
+            <summary>
+            Checks two parameters for equality.
+            </summary>
+            <param name="left">The left parameter.</param>
+            <param name="right">The right parameter.</param>
+            <returns>The result of the equality check.</returns>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerConnectionArguments.op_Inequality(VerbumEssentials.Basics.VServerConnectionArguments,VerbumEssentials.Basics.VServerConnectionArguments)">
+            <summary>
+            Checks two parameters for inequality.
+            </summary>
+            <param name="left">The left parameter.</param>
+            <param name="right">The right parameter.</param>
+            <returns>The result of the inequality check.</returns>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerConnectionArguments.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerConnectionArguments.Equals(VerbumEssentials.Basics.VServerConnectionArguments)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerConnectionArguments.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:VerbumEssentials.Basics.VServerConnections">
+            <summary>
+            Represents a unit handling and providing <see cref="T:Npgsql.NpgsqlConnection"/>.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerConnections.#ctor(VerbumEssentials.Basics.VServerConnectionArguments,VerbumEssentials.Basics.VServerErrors)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VerbumEssentials.Basics.VServerConnections"/> class.
+            </summary>
+            <param name="arguments">The <see cref="T:VerbumEssentials.Basics.VServerConnectionArguments"/> used to connect with the server.</param>
+            <param name="errors">The <see cref="T:VerbumEssentials.Basics.VServerErrors"/> used to handle <see cref="T:VerbumEssentials.Basics.VServerError"/>.</param>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerConnections.Arguments">
+            <summary>
+            Gets the <see cref="T:VerbumEssentials.Basics.VServerConnectionArguments"/> used to connect with the server.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerConnections.Connections">
+            <summary>
+            Gets a list of the <see cref="T:Npgsql.NpgsqlConnection"/> of the <see cref="T:VerbumEssentials.Basics.VServerConnections"/>.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerConnections.Errors">
+            <summary>
+            Gets the <see cref="T:VerbumEssentials.Basics.VServerErrors"/> used to handle <see cref="T:VerbumEssentials.Basics.VServerError"/>.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerConnections.ConnectAsync">
+            <summary>
+            Builds asynchrously a connection to the server.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerConnections.GetConnectionAsync">
+            <summary>
+            Returns an open connection to the server.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:VerbumEssentials.Basics.VServerError">
+            <summary>
+            Describes an error occured requesting the server.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerError.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VerbumEssentials.Basics.VServerError"/> struct.
+            </summary>
+            <param name="description">The description of the <see cref="T:VerbumEssentials.Basics.VServerError"/>.</param>
+            <param name="exception">The exception object of the <see cref="T:VerbumEssentials.Basics.VServerError"/>.</param>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerError.Description">
+            <summary>
+            Gets a description of the <see cref="T:VerbumEssentials.Basics.VServerError"/>.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerError.Exception">
+            <summary>
+            Gets the exception object of the <see cref="T:VerbumEssentials.Basics.VServerError"/>.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerError.Time">
+            <summary>
+            Gets the time when the <see cref="T:VerbumEssentials.Basics.VServerError"/> was raised.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerError.op_Equality(VerbumEssentials.Basics.VServerError,VerbumEssentials.Basics.VServerError)">
+            <summary>
+            Checks two parameters for equality.
+            </summary>
+            <param name="left">The left parameter.</param>
+            <param name="right">The right parameter.</param>
+            <returns>The result of the equality check.</returns>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerError.op_Inequality(VerbumEssentials.Basics.VServerError,VerbumEssentials.Basics.VServerError)">
+            <summary>
+            Checks two parameters for inequality.
+            </summary>
+            <param name="left">The left parameter.</param>
+            <param name="right">The right parameter.</param>
+            <returns>The result of the inequality check.</returns>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerError.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerError.Equals(VerbumEssentials.Basics.VServerError)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerError.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:VerbumEssentials.Basics.VServerErrors">
+            <summary>
+            Represents a unit handling and providing <see cref="T:VerbumEssentials.Basics.VServerError"/>.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerErrors.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VerbumEssentials.Basics.VServerErrors"/> class.
+            </summary>
+        </member>
+        <member name="T:VerbumEssentials.Basics.VServerErrors.ErrorAddedHandler">
+            <summary>
+            Handles the addition of an <see cref="T:VerbumEssentials.Basics.VServerError"/>.
+            </summary>
+            <param name="error">The <see cref="T:VerbumEssentials.Basics.VServerError"/>, that was added.</param>
+        </member>
+        <member name="E:VerbumEssentials.Basics.VServerErrors.ErrorAdded">
+            <summary>
+            An event raised when an <see cref="T:VerbumEssentials.Basics.VServerError"/> was added.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Basics.VServerErrors.Errors">
+            <summary>
+            Gets a list of all registered <see cref="T:VerbumEssentials.Basics.VServerError"/>.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerErrors.AddError(VerbumEssentials.Basics.VServerError)">
+            <summary>
+            Adds an <see cref="T:VerbumEssentials.Basics.VServerError"/>.
+            </summary>
+            <param name="error">The <see cref="T:VerbumEssentials.Basics.VServerError"/>, that should be added.</param>
+        </member>
+        <member name="M:VerbumEssentials.Basics.VServerErrors.OnErrorAdded(VerbumEssentials.Basics.VServerError)">
+            <summary>
+            Invokes the ErrorAdded event of the <see cref="T:VerbumEssentials.Basics.VServerErrors"/>.
+            </summary>
+            <param name="serverError">The <see cref="T:VerbumEssentials.Basics.VServerError"/>, that was added.</param>
+        </member>
+        <member name="T:VerbumEssentials.HelperClass.VObjectExtensions">
+            <summary>
+            Provides extension methods for objects in the VerbumEssentials library.
+            </summary>
+        </member>
+        <member name="M:VerbumEssentials.HelperClass.VObjectExtensions.ThrowExceptionIfNull``1(``0,System.String)">
+            <summary>
+            Returns the input value, or throw an exception if the value is null.
+            </summary>
+            <typeparam name="T">The type of the object.</typeparam>
+            <param name="object">The checked object.</param>
+            <param name="paramName">The parameter name of the object.</param>
+            <returns>The object if it is not null.</returns>
+        </member>
+        <member name="M:VerbumEssentials.HelperClass.VObjectExtensions.NpgsqlWhileNullLoopAsync(VerbumEssentials.Basics.VServerErrors,System.String,System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Executes a loop catching server exceptions till the function had not excecuted up to the end.
+            </summary>
+            <param name="errors">The <see cref="T:VerbumEssentials.Basics.VServerErrors"/> handling the <see cref="T:VerbumEssentials.Basics.VServerError"/>.</param>
+            <param name="message">The message, that should be shown in the error.</param>
+            <param name="function">The function, that should be invoked.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:VerbumEssentials.Resources.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Resources.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Resources.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Resources.Resources.ErrorBuildServerConnection">
+            <summary>
+              Looks up a localized string similar to Aufbauen einer Verbindung mit dem Server.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Resources.Resources.ErrorCloneServerConnection">
+            <summary>
+              Looks up a localized string similar to Klonen einer Verbindung mit dem Server.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Resources.Resources.ErrorInsertContentText">
+            <summary>
+              Looks up a localized string similar to Einsetzen der Textinformation.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Resources.Resources.ErrorSaveContentTextContent">
+            <summary>
+              Looks up a localized string similar to Speichern der Textinformationsinformation.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Resources.Resources.ErrorSaveContentTextQuestion">
+            <summary>
+              Looks up a localized string similar to Speichern der Textinformationsfrage.
+            </summary>
+        </member>
+        <member name="P:VerbumEssentials.Resources.Resources.ErrorUploadQuery">
+            <summary>
+              Looks up a localized string similar to Hochladen von Anfragen.
+            </summary>
+        </member>
+    </members>
+</doc>
