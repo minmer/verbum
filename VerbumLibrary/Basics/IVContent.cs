@@ -4,6 +4,7 @@
 
 namespace VerbumLibrary.Basics
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     /// <summary>
@@ -12,12 +13,22 @@ namespace VerbumLibrary.Basics
     public interface IVContent
     {
         /// <summary>
+        /// Gets the string representation of the <see cref="IVContent"/> type.
+        /// </summary>
+        string ContentType { get; }
+
+        /// <summary>
         /// Gets the identifier of the <see cref="IVContent"/>.
         /// </summary>
         int ID { get; }
 
         /// <summary>
-        /// Gets or sets the question related to the content.
+        /// Gets the questions linked to the <see cref="IVContent"/>.
+        /// </summary>
+        List<IVContent> Links { get; }
+
+        /// <summary>
+        /// Gets or sets the question related to the <see cref="IVContent"/>.
         /// </summary>
         string Question { get; set; }
 

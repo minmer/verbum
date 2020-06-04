@@ -34,7 +34,7 @@ namespace Verbum
 
         private void OnButtonCreateNewContentTextClick(object sender, RoutedEventArgs eventArgs)
         {
-            var contentText = new VContentText(App.QuerySchedule, App.ServerConnections, -1);
+            var contentText = new VContentText(App.QuerySchedule, -1);
             this.contents.Add(contentText);
             new ContentTextWindow(contentText).ShowDialog();
         }
@@ -54,7 +54,7 @@ namespace Verbum
                 {
                     if (!this.contents.Any(content => content.ID == reader.GetInt32(0)))
                     {
-                        this.contents.Add(new VContentText(App.QuerySchedule, App.ServerConnections, reader.GetInt32(0)));
+                        this.contents.Add(new VContentText(App.QuerySchedule, reader.GetInt32(0)));
                     }
                 });
             }

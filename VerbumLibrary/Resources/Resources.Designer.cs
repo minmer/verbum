@@ -22,7 +22,7 @@ namespace VerbumLibrary.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace VerbumLibrary.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VerbumLibrary.Resources.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace VerbumLibrary.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,18 @@ namespace VerbumLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add link to content.
+        /// </summary>
+        public static string ErrorAddLink {
+            get {
+                return ResourceManager.GetString("ErrorAddLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Build server connection.
         /// </summary>
-        internal static string ErrorBuildServerConnection {
+        public static string ErrorBuildServerConnection {
             get {
                 return ResourceManager.GetString("ErrorBuildServerConnection", resourceCulture);
             }
@@ -72,7 +81,7 @@ namespace VerbumLibrary.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Clone server connection.
         /// </summary>
-        internal static string ErrorCloneServerConnection {
+        public static string ErrorCloneServerConnection {
             get {
                 return ResourceManager.GetString("ErrorCloneServerConnection", resourceCulture);
             }
@@ -81,16 +90,25 @@ namespace VerbumLibrary.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Insert Content Text.
         /// </summary>
-        internal static string ErrorInsertContentText {
+        public static string ErrorInsertContentText {
             get {
                 return ResourceManager.GetString("ErrorInsertContentText", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove link to content.
+        /// </summary>
+        public static string ErrorRemoveLink {
+            get {
+                return ResourceManager.GetString("ErrorRemoveLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save content text content.
         /// </summary>
-        internal static string ErrorSaveContentTextContent {
+        public static string ErrorSaveContentTextContent {
             get {
                 return ResourceManager.GetString("ErrorSaveContentTextContent", resourceCulture);
             }
@@ -99,7 +117,7 @@ namespace VerbumLibrary.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Save content text question.
         /// </summary>
-        internal static string ErrorSaveContentTextQuestion {
+        public static string ErrorSaveContentTextQuestion {
             get {
                 return ResourceManager.GetString("ErrorSaveContentTextQuestion", resourceCulture);
             }
@@ -108,7 +126,7 @@ namespace VerbumLibrary.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Upload a query.
         /// </summary>
-        internal static string ErrorUploadQuery {
+        public static string ErrorUploadQuery {
             get {
                 return ResourceManager.GetString("ErrorUploadQuery", resourceCulture);
             }

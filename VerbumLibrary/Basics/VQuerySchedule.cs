@@ -18,18 +18,17 @@ namespace VerbumLibrary.Basics
     /// </summary>
     public class VQuerySchedule
     {
-        private readonly VServerConnections serverConnections;
         private readonly VServerErrors serverErrors;
         private int lastSavedQueryIndex;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="VQuerySchedule"/> class.
         /// </summary>
-        /// <param name="serverConnections">The <see cref="VServerConnections"/> handling the <see cref="NpgsqlConnection"/> of the schedule.</param>
-        /// <param name="serverErrors">The <see cref="VServerErrors"/> handling the <see cref="VServerError"/> of the schedule.</param>
+        /// <param name="serverConnections">The <see cref="VServerConnections"/> handling the <see cref="NpgsqlConnection"/> of the <see cref="VQuerySchedule"/>.</param>
+        /// <param name="serverErrors">The <see cref="VServerErrors"/> handling the <see cref="VServerError"/> of the <see cref="VQuerySchedule"/>.</param>
         public VQuerySchedule(VServerConnections serverConnections, VServerErrors serverErrors)
         {
-            this.serverConnections = serverConnections ?? throw new ArgumentNullException(nameof(serverConnections));
+            this.ServerConnections = serverConnections ?? throw new ArgumentNullException(nameof(serverConnections));
             this.serverErrors = serverErrors ?? throw new ArgumentNullException(nameof(serverErrors));
             this.Queries = new List<VQuery>();
             this.lastSavedQueryIndex = 0;
@@ -47,19 +46,24 @@ namespace VerbumLibrary.Basics
         public delegate void CompletionHandler();
 
         /// <summary>
-        /// An event raised when an <see cref="VQuery"/> was added.
-        /// </summary>
-        public event QueryAddedHandler QueryAdded;
-
-        /// <summary>
         /// An event raised when all <see cref="VQuery"/> were uploaded.
         /// </summary>
         public event CompletionHandler Completion;
 
         /// <summary>
+        /// An event raised when an <see cref="VQuery"/> was added.
+        /// </summary>
+        public event QueryAddedHandler QueryAdded;
+
+        /// <summary>
         /// Gets a list of all scheduled <see cref="VQuery"/>.
         /// </summary>
         public List<VQuery> Queries { get; }
+
+        /// <summary>
+        /// Gets the <see cref="VServerConnections"/> handling the <see cref="NpgsqlConnection"/> of the <see cref="VQuerySchedule"/>.
+        /// </summary>
+        public VServerConnections ServerConnections { get; }
 
         /// <summary>
         /// Adds an <see cref="VQuery"/>.
@@ -76,20 +80,20 @@ namespace VerbumLibrary.Basics
         }
 
         /// <summary>
+        /// Invokes the Completion event of the <see cref="VQuerySchedule"/>.
+        /// </summary>
+        protected virtual void OnCompletion()
+        {
+            this.Completion?.Invoke();
+        }
+
+        /// <summary>
         /// Invokes the QueryAdded event of the <see cref="VQuerySchedule"/>.
         /// </summary>
         /// <param name="query">The <see cref="VQuery"/>, that was added.</param>
         protected virtual void OnQueryAdded(VQuery query)
         {
             this.QueryAdded?.Invoke(query);
-        }
-
-        /// <summary>
-        /// Invokes the Completion event of the <see cref="VQuerySchedule"/>.
-        /// </summary>
-        protected virtual void OnCompletion()
-        {
-            this.Completion?.Invoke();
         }
 
         private async Task UploadRemainingQueriesAsync()
@@ -108,7 +112,7 @@ namespace VerbumLibrary.Basics
 
         private async Task UploadQueryAsync(VQuery query)
         {
-            using (NpgsqlCommand command = query.Command.Invoke(await this.serverConnections.GetConnectionAsync().ConfigureAwait(false)))
+            using (NpgsqlCommand command = query.Command.Invoke(await this.ServerConnections.GetConnectionAsync().ConfigureAwait(false)))
             {
                 using (DbDataReader reader = await command.ExecuteReaderAsync().ConfigureAwait(true))
                 {

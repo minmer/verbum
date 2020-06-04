@@ -8,11 +8,39 @@
         mc:Ignorable="d"
         Title="Content Text" WindowStyle="SingleBorderWindow" SizeToContent="WidthAndHeight" MinWidth="256" MaxWidth="512">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBox Text="{Binding Question}" Margin="6,3" Loaded="OnFocusLoaded"/>
-        <TextBox TextWrapping="Wrap" Grid.Row="1" Text="{Binding Content}" Margin="6,3"/>
+        <TextBox Text="{Binding Question}" Margin="6,3" Loaded="OnFocusLoaded" Grid.ColumnSpan="2"/>
+        <TextBox TextWrapping="Wrap" Grid.Row="1" Text="{Binding Content}" Margin="6,3" Grid.ColumnSpan="2"/>
+        <ItemsControl x:Name="ItemsControlLinks" ItemsSource="{Binding Links}" Grid.Row="2" Grid.ColumnSpan="2">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Question}" Margin="6,3"/>
+                        <Button Content="-" Grid.Column="1" Margin="6,3" Click="ButtonRemoveLinkClick" Width="32"/>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <ComboBox x:Name="ComboBoxLinks" Grid.Row="3" Margin="6,3">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Question}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Content="+" Grid.Column="1" Grid.Row="3" Margin="6,3" Click="ButtonAddLinkClick" Width="32"/>
     </Grid>
 </Window>

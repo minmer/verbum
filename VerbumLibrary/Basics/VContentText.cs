@@ -21,19 +21,19 @@ namespace VerbumLibrary.Basics
     {
         private readonly VQuerySchedule querySchedule;
         private readonly VServerConnections serverConnections;
-        private string question;
         private string content;
+        private List<IVContent> links;
+        private string question;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="VContentText"/> class.
         /// </summary>
         /// <param name="querySchedule">The <see cref="VQuerySchedule"/> handling the <see cref="VQuery"/> of the <see cref="VContentText"/>.</param>
-        /// <param name="serverConnections">The <see cref="VServerConnections"/> handling the <see cref="NpgsqlConnection"/> of the <see cref="VContentText"/>.</param>
-        /// <param name="id">The identifier of the <see cref="VContentText"/>.</param>
-        public VContentText(VQuerySchedule querySchedule, VServerConnections serverConnections, int id)
+        /// <param name="id">The identifier of the <see cref="VContentText"/> (-1 for new contents).</param>
+        public VContentText(VQuerySchedule querySchedule, int id)
         {
             this.querySchedule = querySchedule ?? throw new ArgumentNullException(nameof(querySchedule));
-            this.serverConnections = serverConnections ?? throw new ArgumentNullException(nameof(serverConnections));
+            this.serverConnections = this.querySchedule.ServerConnections ?? throw new ArgumentNullException(nameof(querySchedule));
             this.ID = id;
 
             if (this.ID == -1)
@@ -63,7 +63,31 @@ namespace VerbumLibrary.Basics
         }
 
         /// <inheritdoc/>
+        public string ContentType
+        {
+            get
+            {
+                return "text";
+            }
+        }
+
+        /// <inheritdoc/>
         public int ID { get; private set; }
+
+        /// <inheritdoc/>
+        public List<IVContent> Links
+        {
+            get
+            {
+                if (this.links == null)
+                {
+                    this.links = new List<IVContent>();
+                    _ = this.LoadLinksAsync(this.querySchedule);
+                }
+
+                return this.links;
+            }
+        }
 
         /// <inheritdoc/>
         public string Question

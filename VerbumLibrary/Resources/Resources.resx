@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ErrorAddLink" xml:space="preserve">
+    <value>Add link to content</value>
+    <comment>Add link to content</comment>
+  </data>
   <data name="ErrorBuildServerConnection" xml:space="preserve">
     <value>Build server connection</value>
     <comment>Build server connection</comment>
@@ -128,6 +132,10 @@
   <data name="ErrorInsertContentText" xml:space="preserve">
     <value>Insert Content Text</value>
     <comment>Insert Content Text</comment>
+  </data>
+  <data name="ErrorRemoveLink" xml:space="preserve">
+    <value>Remove link to content</value>
+    <comment>Remove link to content</comment>
   </data>
   <data name="ErrorSaveContentTextContent" xml:space="preserve">
     <value>Save content text content</value>
